@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'disburstment',
     'loan_sanctioning',
     'feedback_and_queries',
+    'openpyxl'
+    # 'django_filter',
 
 ]
 
