@@ -31,8 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'phonenumber_field',
     'corsheaders',
+    'phonenumber_field',
     'admin_app',
     'customer',
     'application_generation',
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'admin_app.User'
 
-CORS_ORIGIN_WHITELIST = [
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'loans2grow.urls'
@@ -133,10 +134,51 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+        "verbose":{
+        "format": "{levelname} {asctime} {module} {name} {message}",
+        "style": "{",
+
+
+        }
+        },
+"handlers":{
+        "error_handler": {
+        "class": "logging.FileHandler",
+        "filename": "error.log",
+        "formatter": "verbose",
+},
+"success_handler": {
+        "class": "logging.FileHandler",
+        "filename": "success.log",
+        "formatter": "verbose",
+},
+        
+#     "class": "logging.FileHandler",
+#     "formater": "verbose",
+},
+"loggers": {
+        "error_logger": {
+        "handlers": [ "error_handler"],
+        "level": "ERROR",
+        "propogate": False,
+},
+"success_logger": {
+        "handlers": ["success_handler",],
+        "level":"INFO",
+        "propogate": True,
+}
+}
+}
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')

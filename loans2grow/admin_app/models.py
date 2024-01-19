@@ -18,6 +18,7 @@ class User(AbstractUser):
         ('admin','admin'),
         ('account_head','account_head'),
     ]
+    username = None
     dob = models.DateField(blank=True, default='2000-12-12')
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES)
     email = models.EmailField(db_index=True, max_length=50, unique=True)
