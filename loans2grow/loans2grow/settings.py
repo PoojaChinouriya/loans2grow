@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'admin_app',
     'customer',
+    'twilio',
     'application_generation',
     'document_verification',
     'disburstment',
@@ -132,8 +133,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-# Default primary key field type
+
+ # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -142,4 +146,50 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')   
+
+TWILIO_PHONE_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER')                                                                                 
+TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')                                                                                 
+TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN') 
+TWILIO_VERIFIED_SID = os.environ.get('TWILIO_VERIFIED_SID') 
+
+LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+        "verbose":{
+        "format": "{levelname} {asctime} {module} {name} {message}",
+        "style": "{",
+
+
+        }
+        },
+"handlers":{
+        "error_handler": {
+        "class": "logging.FileHandler",
+        "filename": "error.log",
+        "formatter": "verbose",
+},
+"success_handler": {
+        "class": "logging.FileHandler",
+        "filename": "success.log",
+        "formatter": "verbose",
+},
+        
+#     "class": "logging.FileHandler",
+#     "formater": "verbose",
+},
+"loggers": {
+        "error_logger": {
+        "handlers": [ "error_handler"],
+        "level": "ERROR",
+        "propogate": False,
+},
+"success_logger": {
+        "handlers": ["success_handler",],
+        "level":"INFO",
+        "propogate": True,
+}
+}
+}
+

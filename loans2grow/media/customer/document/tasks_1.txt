@@ -1,0 +1,163 @@
+
+
+-----Python------
+
+
+1.create a function which returns current day.
+
+ [ Note : Use Datetime module. ]
+
+
+
+
+2.Remove all duplicates from the given list.
+
+  L = [ 1,1,2,2,3,4,5,6,6 ]
+
+ expected o/p -->  [ 1,2,3,4,5,6 ]
+
+
+
+
+3.Given a list of characters, remove all vowels from the given list.
+
+ [ Note : Don't create a new list, remove from list L. ]
+
+ L = [ 'a', 'p', 'p', 'l', 'e' ]  
+
+ expected o/p -->  [ 'p', 'p', 'l' ]  
+
+
+
+
+4.Given a list of characters, concat them to create a word.
+
+ [ Note : solve by using minimum 3 different ways. ]
+
+ L = [ 'a', 'p', 'p', 'l', 'e' ]  
+
+ expected o/p --> 'apple'
+
+
+
+
+
+5.create a function to check a given string is palindrome or not.
+
+  [ Note : solve by using normal as well as lambda function. ]
+
+   examples :
+
+     i/p ->  st = 'nine'       o/p ->   False
+
+     i/p ->  st = 'abba'       o/p ->   True
+
+
+
+
+
+6.Given a list of tuples.
+
+   1st item in tuple is name of student and 2nd is marks.
+
+   Replace students marks with result.
+
+   less than 35  - Fail
+   35 or more    - Pass
+
+   i/p -> [ ('ram' , 23 ), ('amit' , 34 ), ('kiran' , 35 ) , ('sam' : 67 )  ]
+
+   o/p -> [ ('ram' , 'Fail' ), ('amit' , 'Fail' ), ('kiran' , 'Pass' ) , ('sam' : 'Pass' )  ]
+
+
+
+
+
+7.Given a string.Remove all extra whitespaces between words.
+
+ examples :
+
+  i/p -> "Good  morning    india"    o/p  -> "Good morning india"
+
+
+  i/p -> "Each message   is processed   completely before   any other message   is processed"
+ 
+  o/p  -> "Each message is processed completely before any other message is processed"
+
+
+
+
+
+
+---mysql----django----
+
+  +------+--------------------------+---------------+---------------------------+------------+----------------+
+  | code | name                     | continent     | region                    | population | lifeexpectancy |
+  +------+--------------------------+---------------+---------------------------+------------+----------------+
+  | BRA  | Brazil                   | South America | South America             |  170115000 |           62.9 |
+  | BRB  | Barbados                 | North America | Caribbean                 |     270000 |           73.0 |
+  | BRN  | Brunei                   | Asia          | Southeast Asia            |     328000 |           73.6 |
+  | BTN  | Bhutan                   | Asia          | Southern and Central Asia |    2124000 |           52.4 |
+  | BVT  | Bouvet Island            | Antarctica    | Antarctica                |          0 |           NULL |
+  | BWA  | Botswana                 | Africa        | Southern Africa           |    1622000 |           39.3 |
+  | CAF  | Central African Republic | Africa        | Central Africa            |    3615000 |           44.0 |
+  | CAN  | Canada                   | North America | North America             |   31147000 |           79.4 |
+  | CCK  | Cocos (Keeling) Islands  | Oceania       | Australia and New Zealand |        600 |           NULL |
+  | CHE  | Switzerland              | Europe        | Western Europe            |    7160400 |           79.6 |
+  +------+--------------------------+---------------+---------------------------+------------+----------------+
+
+
+
+
+1.write mysql query and also orm queries
+
+ find out
+
+   1.capital of Brazil
+   2.count of countries in asia
+   3.least populated country in North America.
+   4.avg lifeexpectancy of all countries.
+
+
+
+2. Create a crud application with auth.
+ 
+   model class
+  
+   Student   
+   
+   	roll
+   	name
+   	marks  
+   	pic ( image png )   
+   	marksheet  ( file word/pdf ) 	    
+
+
+
+
+
+
+----js-----
+
+
+1.Replace an array’s item with new value if found
+
+ ( You have given an array of numbers. 
+    Write a program to find value 10 in the array,
+    and if it is present, replace it with 100. )
+
+ i/p  -->  nums = [1,10,20,5,60,10]
+
+ o/p  -->  nums = [1,100,20,5,60,100]
+
+
+
+
+2.Find out square root of all item present in the given array
+
+ i/p  -->  [36,49,100,81]
+
+ o/p  -->  [6,7,10,9]
+
+
+
