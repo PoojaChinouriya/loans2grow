@@ -18,6 +18,7 @@ class User(AbstractUser):
         ('admin','admin'),
         ('account_head','account_head'),
     ]
+    username = None
     dob = models.DateField(blank=True, default='2000-12-12')
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES)
     email = models.EmailField(db_index=True, max_length=50, unique=True)
@@ -26,7 +27,7 @@ class User(AbstractUser):
     mobile = PhoneNumberField(region='IN', blank=True, null=True)
     photo = models.ImageField(blank=True, upload_to='photo/', null=True)
     signature = models.ImageField(blank=True, upload_to='signature/', null=True)
-    role = models.CharField(max_length=30, choices=ROLE_CHOICES, blank=True, null=True)
+    role = models.CharField(max_length=30, choices=ROLE_CHOICES, blank=True, null=True) 
     is_active = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'

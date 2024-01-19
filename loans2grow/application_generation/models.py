@@ -28,7 +28,7 @@ class Application(models.Model):
     type_of_employment = models.CharField(max_length=250, choices=EMPLOYMENT_CHOICE, default=0, blank=True)
     business_title = models.CharField(max_length=250, blank=True, null=True)
     business_type = models.CharField(max_length=250, choices=BUSINESS_TYPE, default=0, blank=True)
-    business_address = models.TextField(default=0, blank=True)
+    business_address = models.TextField(default=0, blank=True)    
     gst_registration_no = models.CharField(max_length=50, default=0, blank=True)
     business_license_no = models.CharField(max_length=50, default=0, blank=True)
     expected_average_annual_turnover = models.CharField(max_length=250, default=0, blank=True)

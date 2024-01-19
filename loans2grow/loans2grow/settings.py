@@ -142,4 +142,52 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', True)
+
+# Logging Functionality
+
+LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+        "verbose":{
+        "format": "{levelname} {asctime} {module} {name} {message}",
+        "style": "{",
+
+
+        }
+        },
+"handlers":{
+        "error_handler": {
+        "class": "logging.FileHandler",
+        "filename": "error.log",
+        "formatter": "verbose",
+},
+"success_handler": {
+        "class": "logging.FileHandler",
+        "filename": "success.log",
+        "formatter": "verbose",
+},
+        
+#     "class": "logging.FileHandler",
+#     "formater": "verbose",
+},
+"loggers": {
+        "error_logger": {
+        "handlers": [ "error_handler"],
+        "level": "ERROR",
+        "propogate": False,
+},
+"success_logger": {
+        "handlers": ["success_handler",],
+        "level":"INFO",
+        "propogate": True,
+}
+}
+}
+
+# Image
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
